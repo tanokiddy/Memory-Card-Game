@@ -4,7 +4,8 @@
     grid-template-columns: repeat(4, 1fr);
     max-width: 320px;
     width: 100%;
-    gap: 5px;
-    margin: auto
+    gap: 10px;
+    margin: auto;
+    height: 50vh
 }
 

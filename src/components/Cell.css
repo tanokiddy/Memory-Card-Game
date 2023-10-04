@@ -1,16 +1,28 @@
 .board-item {
-    /* max-width: 25%; */
-    /* width: 100%; */
-    width: 50px;
-    height: 100%;
+  max-width: 320px;
+  width: 100%;
+  padding-bottom: 100%;
+  border: 0;
+  cursor: pointer;
+  background-color: bisque;
+  border-radius: 8px;
 }
-
 .item-red {
-    background-color: red;
+  background-color: red;
 }
 .item-green {
-    background-color: green;
+  background-color: green;
 }
 .item-blue {
-    background-color: blue;
+  background-color: blue;
+}
+
+.item-triangle {
+  width: 100%;
+  height: 100%;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.item-circle {
+  border-radius: 100%;
 }

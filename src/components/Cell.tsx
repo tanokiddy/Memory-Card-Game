@@ -3,21 +3,28 @@ import "./Cell.css";
 
 export interface CellProps {
   // Your code here
-  open: boolean
-  color: "red" | " green" | "blue";
-  shape: "circle" | "square" | "triangle";
+  cell: CellItem
+  handleClick: Function;
+  index: number
 }
+export type CellItem = {
+  open: boolean;
+  color: "red" | " green" | "blue" | string;
+  shape: "circle" | "square" | "triangle" | string;
+};
 
 const Cell: React.FC<CellProps> = (props: CellProps) => {
-  const { color, shape, open } = props;
+  const { cell, handleClick, index } = props;
   // Render cell with shape and color, use CSS to style based on shape and color.
   return (
-    <div
-      className={`board-item item-${color} item-${shape}`}
-      key={color}
-    >
-      {color}
-    </div>
+    <button
+      className={`board-item ${cell.open ? `item-${cell.color}` : ""} ${
+        cell.open ? `item-${cell.shape}` : ""
+      }`}
+      onClick={() => {
+        handleClick(cell, index);
+      }}
+    ></button>
   );
 };
 

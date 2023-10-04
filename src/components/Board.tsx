@@ -1,46 +1,57 @@
 import React, { useState, useEffect, useMemo } from "react";
-import Cell, { CellProps } from "./Cell";
+import Cell, { CellItem, CellProps } from "./Cell";
 import "./Board.css";
 
-// const Shape = ["circle", "square", "triangle"];
+const shapes = ["circle", "square", "triangle"];
 
-// const Color = ["red", "green", "blue"];
-
-// const Grid: CellProps[] = Array.from({ length: 16 }, (_, i) => {
-//   const randomNumber = Math.floor(Math.random() * (3 - 1 + 1) + 1) - 1;
-//   return {
-//     shape: Shape[randomNumber],
-//     color: Color[randomNumber],
-//   };
-// });
+const colors = ["red", "green", "blue"];
 
 const Board: React.FC = () => {
-  const [cellList, setCellList] = useState<CellProps[]>(() => {
-    const results = [];
-    for (let i = 0; i < 16; i++) {
-      const cell: CellProps = {
-        open: false,
-        shape: "triangle",
-        color: "red",
-      };
-      results.push(cell);
+  let objectArray: any = [];
+
+  while (objectArray.length < 8) {
+    let newObject = {
+      color: colors[Math.floor(Math.random() * colors.length)],
+      shape: shapes[Math.floor(Math.random() * shapes.length)],
+      open: false,
+    };
+
+    if (
+      !objectArray.some(
+        (obj: any) =>
+          obj.color === newObject.color &&
+          obj.shape === newObject.shape &&
+          obj.open === newObject.open
+      )
+    ) {
+      objectArray.push(newObject);
     }
-    return results;
-  });
-  // states...
-  useEffect(() => {
-    // Initialize the game board with random shapes and colors
-  }, []);
+  }
 
-  const handleCellClick = (index: number) => {
-    // Reveal cell, check for matches, update game state, and handle game completion
-  };
+  const gridArr = objectArray.concat(objectArray);
 
+  const [gridList, setGridList] = useState(gridArr)
+
+  const handleClick = (item: CellItem, index:number) => {
+    console.log('index: ', index);
+    const newGridList = gridList.map((gridListItem: CellItem) => {
+      if(gridListItem === item && gridListItem.open === false) {
+        console.log(index)
+        return {
+          ...gridList[index],
+          open: true
+        }
+      } else {
+        return gridListItem
+      }
+    })
+    setGridList(newGridList)
+  }
+  
   return (
     <div className="board">
-      {/* Render each cell in the board */}
-      {cellList.map((cell, index) => (
-        <Cell open={cell.open} color={cell.color} shape={cell.shape} key={index} />
+      {gridList.map((cell: any, index: number) => (
+        <Cell cell={cell} handleClick={handleClick} key={index} index={index}/>
       ))}
     </div>
   );
