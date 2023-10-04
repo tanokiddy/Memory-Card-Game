@@ -3,22 +3,25 @@ import "./Cell.css";
 import { CellItem } from "../types";
 
 export interface CellProps {
-  cell: CellItem
-  handleClick: Function;
-  index: number
+  cell: CellItem;
+  // index: number
+  flipped: boolean;
+  chooseCell: Function;
 }
 
-
 const Cell: React.FC<CellProps> = (props: CellProps) => {
-  const { cell, handleClick, index } = props;
+  const { cell, flipped, chooseCell } = props;
+
+  const handleCellClick = () => {
+    chooseCell(cell);
+  };
+
   return (
     <button
-      className={`board-item ${cell.open ? `item-${cell.color}` : ""} ${
-        cell.open ? `item-${cell.shape}` : ""
+      className={`cell ${flipped ? `matched cell-${cell.color} cell-${cell.shape}`  : ""} ${
+        cell.matched ? `item-${cell.shape}` : ""
       }`}
-      onClick={() => {
-        handleClick(index);
-      }}
+      onClick={handleCellClick}
     />
   );
 };

@@ -1,4 +1,4 @@
-.board-item {
+.cell {
   max-width: 320px;
   width: 100%;
   padding-bottom: 100%;
@@ -6,23 +6,27 @@
   cursor: pointer;
   background-color: bisque;
   border-radius: 8px;
+  transform-style: preserve-3d;
 }
-.item-red {
+.cell.matched {
+  transform: rotateY(180deg)
+}
+.cell-red {
   background-color: red;
 }
-.item-green {
+.cell-green {
   background-color: green;
 }
-.item-blue {
+.cell-blue {
   background-color: blue;
 }
 
-.item-triangle {
+.cell-triangle {
   width: 100%;
   height: 100%;
   clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
 }
 
-.item-circle {
+.cell-circle {
   border-radius: 100%;
 }

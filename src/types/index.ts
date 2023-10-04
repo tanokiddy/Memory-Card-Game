@@ -1,5 +1,6 @@
 export type CellItem = {
-  open: boolean;
+  matched: boolean;
   color: "red" | " green" | "blue" | string;
   shape: "circle" | "square" | "triangle" | string;
+  id?: number
 };
