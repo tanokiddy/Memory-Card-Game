@@ -1,6 +1,7 @@
-import React, { useState, useEffect, useMemo } from "react";
-import Cell, { CellItem, CellProps } from "./Cell";
+import React, { useState } from "react";
+import Cell from "./Cell";
 import "./Board.css";
+import { CellItem } from "../types";
 
 const shapes = ["circle", "square", "triangle"];
 

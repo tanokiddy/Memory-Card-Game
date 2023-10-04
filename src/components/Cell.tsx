@@ -1,17 +1,13 @@
 import React from "react";
 import "./Cell.css";
+import { CellItem } from "../types";
 
 export interface CellProps {
-  // Your code here
   cell: CellItem
   handleClick: Function;
   index: number
 }
-export type CellItem = {
-  open: boolean;
-  color: "red" | " green" | "blue" | string;
-  shape: "circle" | "square" | "triangle" | string;
-};
+
 
 const Cell: React.FC<CellProps> = (props: CellProps) => {
   const { cell, handleClick, index } = props;
