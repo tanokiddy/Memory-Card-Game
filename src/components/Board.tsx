@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Cell from "./Cell";
 import "./Board.css";
-import { CellItem } from "../types";
 
 const shapes = ["circle", "square", "triangle"];
 
@@ -30,29 +29,32 @@ const Board: React.FC = () => {
   }
 
   const gridArr = objectArray.concat(objectArray);
+  const grid = gridArr.map((item: any, index: any) => ({
+    ...item,
+    id: index + 1
+  }))
 
-  const [gridList, setGridList] = useState(gridArr)
+  const [gridList, setGridList] = useState(grid);
 
-  const handleClick = (item: CellItem, index:number) => {
-    console.log('index: ', index);
-    const newGridList = gridList.map((gridListItem: CellItem) => {
-      if(gridListItem === item && gridListItem.open === false) {
-        console.log(index)
+  const handleClick = (index: number) => {
+    const idItem = gridList[index].id
+    const newGrid = gridList.map((item:any) => {
+      if(item.id === idItem) {
         return {
-          ...gridList[index],
+          ...item,
           open: true
         }
       } else {
-        return gridListItem
+        return item
       }
     })
-    setGridList(newGridList)
-  }
-  
+    setGridList(newGrid)
+  };
+
   return (
     <div className="board">
       {gridList.map((cell: any, index: number) => (
-        <Cell cell={cell} handleClick={handleClick} key={index} index={index}/>
+        <Cell cell={cell} handleClick={handleClick} key={index} index={index} />
       ))}
     </div>
   );
