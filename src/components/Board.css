@@ -1,0 +1,14 @@
+.board-item {
+    width: 30px;
+    height: 30px;
+}
+
+.item-Red {
+    background-color: red;
+}
+.item-Green {
+    background-color: green;
+}
+.item-Blue {
+    background-color: blue;
+}
