@@ -1,0 +1,16 @@
+.board-item {
+    /* max-width: 25%; */
+    /* width: 100%; */
+    width: 50px;
+    height: 100%;
+}
+
+.item-red {
+    background-color: red;
+}
+.item-green {
+    background-color: green;
+}
+.item-blue {
+    background-color: blue;
+}

@@ -1,14 +1,10 @@
-.board-item {
-    width: 30px;
-    height: 30px;
+.board {
+    display: grid;
+    /* grid-template-rows: repeat(4, 1fr); */
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 320px;
+    width: 100%;
+    gap: 5px;
+    margin: auto
 }
 
-.item-Red {
-    background-color: red;
-}
-.item-Green {
-    background-color: green;
-}
-.item-Blue {
-    background-color: blue;
-}
