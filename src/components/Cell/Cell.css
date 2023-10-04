@@ -5,7 +5,7 @@
   border: 0;
   cursor: pointer;
   background-color: bisque;
-  border-radius: 8px;
+  /* border-radius: 8px; */
   transform-style: preserve-3d;
 }
 .cell.matched {

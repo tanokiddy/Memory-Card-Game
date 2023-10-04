@@ -1,10 +1,9 @@
 import React from "react";
 import "./Cell.css";
-import { CellItem } from "../types";
+import { CellItem } from "@/types";
 
 export interface CellProps {
   cell: CellItem;
-  // index: number
   flipped: boolean;
   chooseCell: Function;
 }
@@ -18,9 +17,9 @@ const Cell: React.FC<CellProps> = (props: CellProps) => {
 
   return (
     <button
-      className={`cell ${flipped ? `matched cell-${cell.color} cell-${cell.shape}`  : ""} ${
-        cell.matched ? `item-${cell.shape}` : ""
-      }`}
+      className={`cell ${
+        flipped ? `matched cell-${cell.color} cell-${cell.shape}` : ""
+      } ${cell.matched ? `item-${cell.shape}` : ""}`}
       onClick={handleCellClick}
     />
   );

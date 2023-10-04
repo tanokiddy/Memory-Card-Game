@@ -1,7 +1,6 @@
 .board {
     padding: 40px 16px;
     display: grid;
-    /* grid-template-rows: repeat(4, 1fr); */
     grid-template-columns: repeat(4, 1fr);
     max-width: 320px;
     width: 100%;
