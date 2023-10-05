@@ -10,10 +10,12 @@ const Board: React.FC = () => {
   const [gridList, setGridList] = useState<CellItem[]>(grid);
   const [cellOne, setCellOne] = useState<CellItem | null>(null);
   const [cellTwo, setCellTwo] = useState<CellItem | null>(null);
+  const [totalTime, setTotalTime] = useState<number>(0);
 
   const chooseCell = (cell: CellItem) => {
-    if(cellOne && cellTwo) return
+    if (cellOne && cellTwo) return;
     cellOne && cellOne !== cell ? setCellTwo(cell) : setCellOne(cell);
+    setTotalTime((preState) => preState + 1);
   };
 
   useEffect(() => {
@@ -40,13 +42,13 @@ const Board: React.FC = () => {
   }, [cellOne, cellTwo]);
 
   useEffect(() => {
-    const isDone = gridList.every(item => item.matched)
-    if(isDone) {
+    const isDone = gridList.every((item) => item.matched);
+    if (isDone) {
       setTimeout(() => {
-        alert('Congratulation!!!')
-      },1000)
+        alert(`Congratulations!!! You have completed this game in ${totalTime/2} tries`);
+      }, 1000);
     }
-  },[gridList])
+  }, [gridList]);
 
   return (
     <div className="board">
@@ -57,7 +59,6 @@ const Board: React.FC = () => {
           chooseCell={chooseCell}
           flipped={cell === cellOne || cell === cellTwo || cell.matched}
         />
-        
       ))}
     </div>
   );
