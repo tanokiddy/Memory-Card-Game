@@ -18,13 +18,14 @@
   cursor: default;
   pointer-events: none;
 }
-.cell-red {
+
+.cell-red:before {
   background-color: red;
 }
-.cell-green {
+.cell-green:before {
   background-color: green;
 }
-.cell-blue {
+.cell-blue:before {
   background-color: blue;
 }
 
@@ -46,7 +47,7 @@
   position: absolute;
   width: 80%;
   height: 80%;
-  background-color: inherit;
+  /*background-color: inherit;*/
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);

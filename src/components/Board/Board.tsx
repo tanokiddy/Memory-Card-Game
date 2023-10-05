@@ -39,6 +39,15 @@ const Board: React.FC = () => {
     }
   }, [cellOne, cellTwo]);
 
+  useEffect(() => {
+    const isDone = gridList.every(item => item.matched)
+    if(isDone) {
+      setTimeout(() => {
+        alert('Congratulation!!!')
+      },1000)
+    }
+  },[gridList])
+
   return (
     <div className="board">
       {gridList.map((cell, index) => (
@@ -48,6 +57,7 @@ const Board: React.FC = () => {
           chooseCell={chooseCell}
           flipped={cell === cellOne || cell === cellTwo || cell.matched}
         />
+        
       ))}
     </div>
   );

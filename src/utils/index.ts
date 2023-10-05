@@ -30,6 +30,5 @@ export const createGridList = () => {
     id: index + 1,
   })); 
   grid.sort(() => Math.random() - 0.5)
-  console.log('Math.random() - 0.5: ', Math.random() - 0.5);
   return grid
 };
