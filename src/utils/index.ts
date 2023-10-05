@@ -1,8 +1,8 @@
 import { ShapeType, ColorType } from "../types/board";
 
-const shapes = [ShapeType.circle, ShapeType.square, ShapeType.triangle];
+const shapes = [ShapeType.Circle, ShapeType.Square, ShapeType.Triangle];
 
-const colors = [ColorType.red, ColorType.green, ColorType.blue];
+const colors = [ColorType.Red, ColorType.Green, ColorType.Blue];
 
 export const createGridList = () => {
   let objectArray: any = [];

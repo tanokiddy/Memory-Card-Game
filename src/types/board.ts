@@ -1,11 +1,11 @@
 export enum ColorType {
-    green = 'green',
-    blue = 'blue',
-    red = 'red',
+    Green = 'Green',
+    Blue = 'Blue',
+    Red = 'Red',
 }
 
 export enum ShapeType {
-    circle = 'circle',
-    square = 'square',
-    triangle = 'triangle'
+    Circle = 'Circle',
+    Square = 'Square',
+    Triangle = 'Triangle'
 }
