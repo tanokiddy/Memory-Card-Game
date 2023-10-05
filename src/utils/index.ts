@@ -28,6 +28,8 @@ export const createGridList = () => {
   const grid = gridArr.map((item: any, index: any) => ({
     ...item,
     id: index + 1,
-  }));
+  })); 
+  grid.sort(() => Math.random() - 0.5)
+  console.log('Math.random() - 0.5: ', Math.random() - 0.5);
   return grid
 };
