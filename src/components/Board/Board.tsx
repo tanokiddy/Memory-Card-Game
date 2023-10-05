@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from "react";
-import "./Board.css";
 import { CellItem } from "@/types";
+import css from './Board.module.css'
 import Cell from "../Cell";
 import { createGridList } from "../../utils";
 
 const Board: React.FC = () => {
-  const grid = createGridList();
-
-  const [gridList, setGridList] = useState<CellItem[]>(grid);
+  const [gridList, setGridList] = useState<CellItem[]>(() => createGridList());
   const [cellOne, setCellOne] = useState<CellItem | null>(null);
   const [cellTwo, setCellTwo] = useState<CellItem | null>(null);
   const [totalTime, setTotalTime] = useState<number>(0);
@@ -37,7 +35,7 @@ const Board: React.FC = () => {
       setTimeout(() => {
         setCellOne(null);
         setCellTwo(null);
-      }, 500);
+      }, 1000);
     }
   }, [cellOne, cellTwo]);
 
@@ -46,15 +44,16 @@ const Board: React.FC = () => {
     if (isDone) {
       setTimeout(() => {
         alert(`Congratulations!!! You have completed this game in ${totalTime/2} tries`);
-      }, 1000);
+      }, 1500);
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [gridList]);
 
   return (
-    <div className="board">
-      {gridList.map((cell, index) => (
+    <div className={css.board}>
+      {gridList.map((cell) => (
         <Cell
-          key={index}
+          key={cell.id}
           cell={cell}
           chooseCell={chooseCell}
           flipped={cell === cellOne || cell === cellTwo || cell.matched}

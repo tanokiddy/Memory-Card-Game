@@ -1,6 +1,6 @@
 .cell {
-  max-width: 320px;
-  width: 100%;
+  width: 80px;
+  aspect-ratio: 1;
   padding-bottom: 100%;
   border: 0;
   background-color: bisque;
@@ -19,30 +19,30 @@
   pointer-events: none;
 }
 
-.cell-red:before {
+.cell_red:before {
   background-color: red;
 }
-.cell-green:before {
+.cell_green:before {
   background-color: green;
 }
-.cell-blue:before {
+.cell_blue:before {
   background-color: blue;
 }
 
-.cell-triangle {
+.cell_triangle {
   width: 100%;
   height: 100%;
 }
 
-.cell-triangle:before {
+.cell_triangle:before {
   clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
 }
 
-.cell-circle:before {
+.cell_circle:before {
   border-radius: 100%;
 }
 
-.cell-triangle:before, .cell-circle:before, .cell-square:before {
+.cell_triangle:before, .cell_circle:before, .cell_square:before {
   content: "";
   position: absolute;
   width: 80%;
@@ -55,7 +55,7 @@
 }
 
 
-.cell-triangle:after, .cell-circle:after, .cell-square:after {
+.cell_triangle:after, .cell_circle:after, .cell_square:after {
   content: "";
   position: absolute;
   inset: 0;

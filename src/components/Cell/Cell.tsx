@@ -1,6 +1,7 @@
 import React from "react";
-import "./Cell.css";
+import css from "./Cell.module.css";
 import { CellItem } from "@/types";
+import clsx from "clsx";
 
 export interface CellProps {
   cell: CellItem;
@@ -10,16 +11,18 @@ export interface CellProps {
 
 const Cell: React.FC<CellProps> = (props: CellProps) => {
   const { cell, flipped, chooseCell } = props;
-
+  const { color, shape, matched } = cell;
+  
   const handleCellClick = () => {
     chooseCell(cell);
   };
-
   return (
     <button
-      className={`cell ${
-        flipped ? `matched cell-${cell.color} cell-${cell.shape}` : ""
-      } ${cell.matched ? `item-${cell.shape}` : ""}`}
+      className={clsx(
+        css.cell,
+        flipped ? `${css.matched} ${css[`cell_${color}`]} ${css[`cell_${shape}`]}` : "",
+        matched ? css[`cell_${shape}`] : ""
+      )}
       onClick={handleCellClick}
     />
   );
