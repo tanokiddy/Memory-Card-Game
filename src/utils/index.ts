@@ -1,6 +1,8 @@
-const shapes = ["circle", "square", "triangle"];
+import { ShapeType, ColorType } from "../types/board";
 
-const colors = ["red", "green", "blue"];
+const shapes = [ShapeType.circle, ShapeType.square, ShapeType.triangle];
+
+const colors = [ColorType.red, ColorType.green, ColorType.blue];
 
 export const createGridList = () => {
   let objectArray: any = [];
@@ -28,7 +30,7 @@ export const createGridList = () => {
   const grid = gridArr.map((item: any, index: any) => ({
     ...item,
     id: index + 1,
-  })); 
-  grid.sort(() => Math.random() - 0.5)
-  return grid
+  }));
+  grid.sort(() => Math.random() - 0.5);
+  return grid;
 };
