@@ -12,6 +12,7 @@ const Board: React.FC = () => {
   const [cellTwo, setCellTwo] = useState<CellItem | null>(null);
 
   const chooseCell = (cell: CellItem) => {
+    if(cellOne && cellTwo) return
     cellOne && cellOne !== cell ? setCellTwo(cell) : setCellOne(cell);
   };
 
