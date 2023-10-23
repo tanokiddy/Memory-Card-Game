@@ -19,30 +19,30 @@
   pointer-events: none;
 }
 
-.cell_red:before {
+.cell_Red:before {
   background-color: red;
 }
-.cell_green:before {
+.cell_Green:before {
   background-color: green;
 }
-.cell_blue:before {
+.cell_Blue:before {
   background-color: blue;
 }
 
-.cell_triangle {
+.cell_Triangle {
   width: 100%;
   height: 100%;
 }
 
-.cell_triangle:before {
+.cell_Triangle:before {
   clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
 }
 
-.cell_circle:before {
+.cell_Circle:before {
   border-radius: 100%;
 }
 
-.cell_triangle:before, .cell_circle:before, .cell_square:before {
+.cell_Triangle:before, .cell_Circle:before, .cell_Square:before {
   content: "";
   position: absolute;
   width: 80%;
@@ -55,7 +55,7 @@
 }
 
 
-.cell_triangle:after, .cell_circle:after, .cell_square:after {
+.cell_Triangle:after, .cell_Circle:after, .cell_Square:after {
   content: "";
   position: absolute;
   inset: 0;
