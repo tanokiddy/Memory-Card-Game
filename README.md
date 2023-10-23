@@ -1,4 +1,4 @@
-# Shape Matcher Game - Interview Test
+# Memory-Card-Game
 
 ## Objective
 
@@ -14,30 +14,4 @@ Create a simple game that tests a candidate's React and TypeScript skills. The g
 6. If the revealed shapes/colors match, the cells remain open.
 7. If the revealed shapes/colors don't match, the cells are automatically hidden after a 1-second delay.
 8. The game ends when all pairs are matched, and the user is shown a completion message with the number of attempts it took to finish the game.
-
-## Requirements
-
-1. Use React and TypeScript to develop the game.
-2. Use functional components and React Hooks for state management.
-3. Create custom TypeScript types for shape, color, and game state.
-4. Style the game using CSS modules or styled-components.
-5. Ensure the game is responsive and works well on different screen sizes.
-
-## Assessment Criteria
-
-1. Code quality and organization: Proper use of React components, TypeScript types, and styling techniques.
-2. Functionality: The game should work as described and be free of bugs.
-3. State management: Efficient and clean use of React Hooks for state management.
-4. Responsiveness: The game should look and work well on various screen sizes.
-5. Bonus: Add a timer to track how long it takes to complete the game.
-6. Bonus: Unit Testing: Writing unit tests for the components and game logic using Jest and React Testing Library is a huge plus. 
-
-## Steps to Submit
-
-1. Clone this repository
-2. Complete the game
-3. Push to your git
-4. Submit the Git URL
-
-This test should take a skilled React/TypeScript developer between 30-60 minutes to complete.
 
